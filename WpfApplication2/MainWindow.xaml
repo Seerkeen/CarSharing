@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1008">
+    <Grid ShowGridLines="False">
+        <!-- Устанавливаем две строки -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="208*"></RowDefinition>
+            <RowDefinition Height="122*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="122*"/>
+            <RowDefinition Height="208*"/>
+        </Grid.RowDefinitions>
+        <!-- Устанавливаем три столбца -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="263*"></ColumnDefinition>
+            <ColumnDefinition Width="475*"></ColumnDefinition>
+            <ColumnDefinition Width="263*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="buttonNewOrder" Content="Create new order" Grid.Column="1" HorizontalAlignment="Stretch"  Grid.Row="1" VerticalAlignment="Stretch" Command="{Binding NewOrder}" FontSize="40" />
+        <Button x:Name="buttonCheckOrder" Content="Check order" Grid.Column="1" HorizontalAlignment="Stretch"  Grid.Row="3" VerticalAlignment="Stretch" Command="{Binding CheckOrder}" FontSize="40"/>
+
+    </Grid>
+</Window>
