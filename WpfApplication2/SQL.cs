@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NLog;
 
 namespace WpfApplication2
 {
@@ -34,6 +35,15 @@ namespace WpfApplication2
                 }
                 catch
                 {
+                    Logger log = LogManager.GetCurrentClassLogger();
+
+
+                    log.Trace("trace message");
+                    log.Debug("debug message");
+                    log.Info("info message");
+                    log.Warn("warn message");
+                    log.Error("error message");
+                    log.Fatal("fatal message");
                     return null;
                 }
             }
@@ -62,6 +72,15 @@ namespace WpfApplication2
                 }
                 catch
                 {
+                    Logger log = LogManager.GetCurrentClassLogger();
+
+
+                    log.Trace("trace message");
+                    log.Debug("debug message");
+                    log.Info("info message");
+                    log.Warn("warn message");
+                    log.Error("error message");
+                    log.Fatal("fatal message");
                     return null;
                 }
             }
@@ -82,14 +101,22 @@ namespace WpfApplication2
                     connection.Open();
                     cmd.ExecuteNonQuery();
                     connection.Close();
-                    //Console.WriteLine(order);
+                    
                 }
                 catch
                 {
-                    //return null;
+                    Logger log = LogManager.GetCurrentClassLogger();
+
+
+                    log.Trace("trace message");
+                    log.Debug("debug message");
+                    log.Info("info message");
+                    log.Warn("warn message");
+                    log.Error("error message");
+                    log.Fatal("fatal message");
                 }
             }
-            //  return order;
+           
         }
     }
 }

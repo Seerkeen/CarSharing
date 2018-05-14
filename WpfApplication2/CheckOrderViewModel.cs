@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NLog;
 
 namespace WpfApplication2
 {
@@ -41,8 +42,20 @@ namespace WpfApplication2
             try
             {
                 currOrder = sql.CheckOrder(int.Parse(Search));
+                //throw new System.ArgumentException("Parameter cannot be null", "original");
             }
-            catch { }
+            catch
+            {
+                Logger log = LogManager.GetCurrentClassLogger();
+
+
+                log.Trace("trace message");
+                log.Debug("debug message");
+                log.Info("info message");
+                log.Warn("warn message");
+                log.Error("error message");
+                log.Fatal("fatal message");
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
